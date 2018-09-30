@@ -14,7 +14,7 @@ const char* mqttTopic = "{mqtt_topic}";
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
 
-OneWire oneWire(D4);
+OneWire oneWire({oneWirePin});
 DallasTemperature tempSensor(&oneWire);
 
 void setup() {
@@ -36,7 +36,7 @@ void loop() {
   }
 
   float currentTemp = readTemp();
-  char* currentTempArray;
+  char currentTempArray[6];
   dtostrf(currentTemp, 6, 2, currentTempArray);
   mqttClient.publish(mqttTopic, currentTempArray);
   delay(5000);
