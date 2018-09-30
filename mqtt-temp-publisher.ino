@@ -1,16 +1,21 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
 
 const char* wifiSsid = "{wifi_ssid}";
 const char* wifiPassword = "{wifi_password}";
 
 const char* mqttBroker = "broker.hivemq.com";
-const int   mqttPort = 1883;
+const int mqttPort = 1883;
 const char* mqttClientId = "{mqtt_client_id}";
 const char* mqttTopic = "{mqtt_topic}";
 
-WiFiClient   wifiClient;
+WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
+
+OneWire oneWire(D4);
+DallasTemperature tempSensor(&oneWire);
 
 void setup() {
   WiFi.begin(wifiSsid, wifiPassword);
@@ -30,6 +35,18 @@ void loop() {
     mqttClient.connect(mqttClientId);
   }
 
-  mqttClient.publish(mqttTopic, "Hello World!");
+  float currentTemp = readTemp();
+  char* currentTempArray;
+  dtostrf(currentTemp, 6, 2, currentTempArray);
+  mqttClient.publish(mqttTopic, currentTempArray);
   delay(5000);
+}
+
+float readTemp() {
+  float temp;
+  do {
+    tempSensor.requestTemperatures();
+    temp = tempSensor.getTempCByIndex(0);
+  } while (temp == (85.0) || temp == (-127.0));
+  return temp;
 }

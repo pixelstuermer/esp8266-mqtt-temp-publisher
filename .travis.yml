@@ -20,6 +20,15 @@ install:
   - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
   - sudo unzip master.zip
   - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
+  - sudo rm master.zip
+  - sudo wget https://github.com/PaulStoffregen/OneWire/archive/master.zip
+  - sudo unzip master.zip
+  - sudo mv OneWire-master /usr/local/share/arduino/libraries
+  - sudo rm master.zip
+  - sudo wget https://github.com/milesburton/Arduino-Temperature-Control-Library/archive/master.zip
+  - sudo unzip master.zip
+  - sudo mv Arduino-Temperature-Control-Library-master /usr/local/share/arduino/libraries
+  - sudo rm master.zip
 
 script:
   - arduino --verify --board $BOARD mqtt-temp-publisher.ino
