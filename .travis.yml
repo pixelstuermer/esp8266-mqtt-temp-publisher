@@ -23,8 +23,8 @@ install:
   - sudo rm master.zip
 
 script:
-  - arduino --verify --board $NODEMCU mqtt-temp-publisher.ino
-#  - arduino --verify --board $ESP mqtt-temp-publisher.ino
+  - arduino --verify --board $ESP mqtt-temp-publisher.ino
+#  - arduino --verify --board $NODEMCU mqtt-temp-publisher.ino
 
 notifications:
   email:
