@@ -14,7 +14,10 @@ before_install:
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 
 install:
-  - arduino --install-library "ESP8266WiFi"
+#  - arduino --install-library "ESP8266WiFi"
+  - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
+  - sudo unzip pubsubclient-master.zip
+  - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
 #  - arduino --install-library "PubSubClient"
 
 script:
