@@ -1,8 +1,8 @@
 language: c
 
 env:
-  - ESP=esp8266:esp8266:generic
-#  - NODEMCU=esp8266:esp8266:nodemcuv2
+#  - ESP=esp8266:esp8266:generic
+  - NODEMCU=esp8266:esp8266:nodemcuv2
 
 branches:
   only:
@@ -17,14 +17,16 @@ before_install:
 install:
   - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.json" --save-prefs
   - arduino --install-boards esp8266:esp8266
+#  - arduino --board $ESP --save-prefs
+  - arduino --board $NODEMCU --save-prefs
   - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
   - sudo unzip master.zip
   - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
   - sudo rm master.zip
 
 script:
-  - arduino --verify --board $ESP mqtt-temp-publisher.ino
-#  - arduino --verify --board $NODEMCU mqtt-temp-publisher.ino
+#  - arduino --verify --board $ESP mqtt-temp-publisher.ino
+  - arduino --verify --board $NODEMCU mqtt-temp-publisher.ino
 
 notifications:
   email:
