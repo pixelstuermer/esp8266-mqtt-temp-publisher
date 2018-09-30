@@ -20,8 +20,10 @@ The following variables need to be set to tailor the application to your needs. 
 
     oneWire({data pin of your temperature sensor});
 
-## Build
+## Building
 Tbd.
+
+## Installing
 
 ## Required Libraries
 * [ESP8266WiFi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)
