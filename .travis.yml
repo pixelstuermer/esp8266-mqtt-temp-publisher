@@ -16,7 +16,7 @@ before_install:
 install:
   - sudo wget https://github.com/esp8266/Arduino/archive/master.zip
   - sudo unzip master.zip
-  - sudo mv Arduino-master/libraries /usr/local/share/arduino/libraries
+  - sudo mv Arduino-master/libraries /usr/local/share/arduino
   - sudo rm master.zip
   - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
   - sudo unzip master.zip
