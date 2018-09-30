@@ -1,7 +1,8 @@
 language: c
 
 env:
-  - NODEMCU=esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M
+  - ESP=esp8266:esp8266:generic
+  - NODEMCU=esp8266:esp8266:nodemcuv2
 
 branches:
   only:
@@ -23,6 +24,7 @@ install:
 
 script:
   - arduino --verify --board $NODEMCU mqtt-temp-publisher.ino
+  - arduino --verify --board $ESP mqtt-temp-publisher.ino
 
 notifications:
   email:
