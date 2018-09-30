@@ -19,7 +19,7 @@ install:
   - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
   - sudo unzip master.zip
   - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
-  - sudo rm master.-zip
+  - sudo rm master.zip
 
 script:
   - arduino --verify --board $NODEMCU mqtt-temp-publisher.ino
