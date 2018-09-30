@@ -16,14 +16,14 @@ before_install:
 install:
   - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.json" --save-prefs
   - arduino --install-boards esp8266:esp8266
-#  - arduino --board esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M --save-prefs
+  - arduino --board esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M --save-prefs
   - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
   - sudo unzip master.zip
   - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
-  - sudo rm master.zip
 
 script:
-  - arduino --verify mqtt-temp-publisher.ino
+#  - arduino --verify mqtt-temp-publisher.ino
+  - arduino --verify --board esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M mqtt-temp-publisher.ino
 
 notifications:
   email:
