@@ -20,6 +20,6 @@ install:
 #  - arduino --install-library "PubSubClient"
 
 script:
-  - arduino --verify --board esp8266:esp8266:nodemcu mqtt-temp-publisher.ino
+  - arduino --verify --board esp8266:esp8266:generic mqtt-temp-publisher.ino
 #  - build_main_platforms
 #  - arduino --verify --board esp8266:esp8266
