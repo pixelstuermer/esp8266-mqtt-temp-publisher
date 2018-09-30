@@ -22,4 +22,4 @@ install:
   - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
 
 script:
-  - arduino --verify --board arduino:avr:uno mqtt-temp-publisher.ino
+  - arduino --verify mqtt-temp-publisher.ino
