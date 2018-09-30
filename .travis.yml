@@ -1,0 +1,16 @@
+language: c
+sudo: false
+
+branches:
+  only:
+    - master
+
+before_install:
+  - source <(curl -SLs https://raw.githubusercontent.com/adafruit/travis-ci-arduino/master/install.sh)
+
+install:
+  - arduino --install-library "ESP8266WiFi"
+  - arduino --install-library "PubSubClient"
+
+script:
+  - build_main_platforms
