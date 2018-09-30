@@ -1,7 +1,7 @@
 language: c
 
 env:
-  - BOARD=esp8266:esp8266:nodemcuv2
+  - BOARD=esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M
 
 branches:
   only:
