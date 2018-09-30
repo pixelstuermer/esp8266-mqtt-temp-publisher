@@ -21,7 +21,7 @@ The following variables need to be set to tailor the application to your needs. 
     mqttClientId = "{MQTT client ID}";
     mqttTopic = "{MQTT topic}";
 
-    oneWire({data pin of your temperature sensor});  // default is "D4"
+    oneWire({data pin of your temperature sensor});  // default is D4
 
 ## Building
 Tbd.
