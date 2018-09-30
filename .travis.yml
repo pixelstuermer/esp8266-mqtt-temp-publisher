@@ -1,32 +1,29 @@
 language: c
 
 env:
-#  - ESP=esp8266:esp8266:generic
-  - NODEMCU=esp8266:esp8266:nodemcuv2
+  - BOARD=esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M
 
 branches:
   only:
     - master
 
 before_install:
-  - sudo wget http://downloads.arduino.cc/arduino-1.6.5-linux64.tar.xz
-  - sudo tar xf arduino-1.6.5-linux64.tar.xz
-  - sudo mv arduino-1.6.5 /usr/local/share/arduino
+  - sudo wget http://downloads.arduino.cc/arduino-1.8.6-linux64.tar.xz
+  - sudo tar xf arduino-1.8.6-linux64.tar.xz
+  - sudo mv arduino-1.8.6 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 
 install:
   - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.json" --save-prefs
   - arduino --install-boards esp8266:esp8266
-#  - arduino --board $ESP --save-prefs
-  - arduino --board $NODEMCU --save-prefs
+  - arduino --board $BOARD --save-prefs
   - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
   - sudo unzip master.zip
   - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
   - sudo rm master.zip
 
 script:
-#  - arduino --verify --board $ESP mqtt-temp-publisher.ino
-  - arduino --verify --board $NODEMCU mqtt-temp-publisher.ino
+  - arduino --verify --board $BOARD mqtt-temp-publisher.ino
 
 notifications:
   email:
