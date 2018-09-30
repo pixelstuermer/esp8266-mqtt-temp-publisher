@@ -14,6 +14,7 @@ before_install:
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 
 install:
+  - sudo rm -r /usr/local/share/arduino/libraries
   - sudo wget https://github.com/esp8266/Arduino/archive/master.zip
   - sudo unzip master.zip
   - sudo mv Arduino-master/libraries /usr/local/share/arduino
