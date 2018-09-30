@@ -3,7 +3,7 @@
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("Hello World!");x
+  Serial.println("Hello World!");
 }
 
 void loop() {
