@@ -24,6 +24,7 @@ The following variables need to be set to tailor the application to your needs. 
 Tbd.
 
 ## Installing
+Tbd.
 
 ## Required Libraries
 * [ESP8266WiFi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)
