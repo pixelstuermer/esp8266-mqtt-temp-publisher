@@ -3,9 +3,11 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
+// Wifi setup
 const char* wifiSsid = "{wifi_ssid}";
 const char* wifiPassword = "{wifi_password}";
 
+// Mqtt setup
 const char* mqttBroker = "broker.hivemq.com";
 const int mqttPort = 1883;
 const char* mqttClientId = "{mqtt_client_id}";
@@ -14,9 +16,11 @@ const char* mqttTopic = "{mqtt_topic}";
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
 
+// Temperature sensor setup
 OneWire oneWire(D4);
 DallasTemperature tempSensor(&oneWire);
 
+// Connecting to Wifi and Mqtt broker
 void setup() {
   WiFi.begin(wifiSsid, wifiPassword);
   WiFi.mode(WIFI_STA);
@@ -30,6 +34,7 @@ void setup() {
   delay(500);
 }
 
+// Publishing temperature data every some seconds
 void loop() {
   if (!mqttClient.connected()) {
     mqttClient.connect(mqttClientId);
@@ -42,6 +47,7 @@ void loop() {
   delay(5000);
 }
 
+// Reading the actual temperature data
 float readTemp() {
   float temp;
   do {
