@@ -14,12 +14,8 @@ before_install:
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 
 install:
-  - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.json" --save-prefs
-  - arduino --install-boards esp8266:esp8266 --save-prefs
 #  - arduino --install-library "ESP8266WiFi"
 #  - arduino --install-library "PubSubClient"
 
 script:
-  - arduino --verify --board esp8266:esp8266:generic mqtt-temp-publisher.ino
-#  - build_main_platforms
-#  - arduino --verify --board esp8266:esp8266
+  - arduino --verify --board arduino:avr:uno mqtt-temp-publisher.ino
