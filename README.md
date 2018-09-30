@@ -11,17 +11,17 @@ Tbd.
 Tbd.
 
 ## Configuration
-The following variables need to be set to tailor the application to your needs. `mqttBroker` and `mqttPort` can remain unchanged if the [public broker](http://www.mqtt-dashboard.com) of HiveMQ is to be used. Also, the [publishing interval](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino#L47) can be changed.
+The following variables need to be set to tailor the application to your needs. `mqttBroker` and `mqttPort` can remain unchanged if the [public broker](http://www.mqtt-dashboard.com) of HiveMQ is to be used. Also, the [publishing interval](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino#L47) can be changed (default is `5000` milliseconds).
 
     wifiSsid = "{WIFI name}";
     wifiPassword = "{WIFI password}";
 
-    mqttBroker = "{MQTT broker url}";
-    mqttPort = {MQTT broker port};
+    mqttBroker = "{MQTT broker url}";                // default is "broker.hivemq.com"
+    mqttPort = {MQTT broker port};                   // default is 1883
     mqttClientId = "{MQTT client ID}";
     mqttTopic = "{MQTT topic}";
 
-    oneWire({data pin of your temperature sensor});
+    oneWire({data pin of your temperature sensor});  // default is "D4"
 
 ## Building
 Tbd.
