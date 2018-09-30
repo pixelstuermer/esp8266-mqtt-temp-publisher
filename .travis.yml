@@ -18,5 +18,6 @@ install:
 #  - arduino --install-library "PubSubClient"
 
 script:
+  - arduino --verify --board arduino:avr:uno mqtt-temp-publisher.ino
 #  - build_main_platforms
 #  - arduino --verify --board esp8266:esp8266
