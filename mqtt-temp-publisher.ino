@@ -14,7 +14,7 @@ const char* mqttTopic = "{mqtt_topic}";
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
 
-OneWire oneWire({oneWirePin});
+OneWire oneWire(D4);
 DallasTemperature tempSensor(&oneWire);
 
 void setup() {
