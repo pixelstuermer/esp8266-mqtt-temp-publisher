@@ -7,9 +7,6 @@ The script reads temperature data from a [DS18B20](https://create.arduino.cc/pro
 ## Prerequisites
 Tbd.
 
-## Getting Started
-Tbd.
-
 ## Configuration
 The following variables need to be set to tailor the application to your needs. `mqttBroker` and `mqttPort` can remain unchanged if the [public broker](http://www.mqtt-dashboard.com) of HiveMQ is to be used. Also, the [publishing interval](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino#L47) can be changed.
 
