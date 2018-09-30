@@ -1,7 +1,7 @@
 language: c
 
 env:
-  - BOARD=esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M
+  - BOARD=esp8266:esp8266:nodemcuv2
 
 branches:
   only:
@@ -20,7 +20,6 @@ install:
   - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
   - sudo unzip master.zip
   - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
-  - sudo rm master.zip
 
 script:
   - arduino --verify --board $BOARD mqtt-temp-publisher.ino
