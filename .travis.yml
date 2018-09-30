@@ -14,11 +14,9 @@ before_install:
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 
 install:
-  - sudo rm -r /usr/local/share/arduino/libraries
-  - sudo wget https://github.com/esp8266/Arduino/archive/master.zip
-  - sudo unzip master.zip
-  - sudo mv Arduino-master/libraries /usr/local/share/arduino
-  - sudo rm master.zip
+  - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.json" --save-prefs
+  - arduino --install-boards esp8266:esp8266
+#  - arduino --board esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M --save-prefs
   - sudo wget https://github.com/knolleary/pubsubclient/archive/master.zip
   - sudo unzip master.zip
   - sudo mv pubsubclient-master /usr/local/share/arduino/libraries
