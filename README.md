@@ -6,7 +6,7 @@ The script reads temperature data from a [DS18B20](https://create.arduino.cc/pro
 
 ## Prerequisites
 * [Arduino IDE](https://www.arduino.cc/en/Main/Software) (or the [Arduino CLI](https://playground.arduino.cc/Learning/CommandLine) and a text editor)
-* Additional boards (ESP8266 and NodeMCU), as explained [here](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/)
+* Additional boards (ESP8266 or NodeMCU), as explained [here](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/)
 * Additional [libraries](#required-libraries) (to support Wifi, MQTT, OneWire and the temperature sensor)
 * Possibly [Python](https://www.python.org/downloads/) and [Esptool](https://github.com/espressif/esptool) (for flashing the script)
 
