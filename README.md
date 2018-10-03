@@ -11,7 +11,10 @@ The script reads temperature data from a [DS18B20](https://create.arduino.cc/pro
 * Possibly [Python](https://www.python.org/downloads/) and [Esptool](https://github.com/espressif/esptool) (for flashing the script)
 
 ## Getting Started
-Tbd.
+1. Download the [mqtt-temp-publisher.ino](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino) file or clone this repository using `git clone`
+2. Change the required variables as shown [below](#configuration)
+3. [Build](#building) the binary
+4. [Flash](#installing) the firmware to your ESP8266 or NodeMCU board
 
 ## Configuration
 The following variables need to be set to tailor the application to your needs. `mqttBroker` and `mqttPort` can remain unchanged if the [public broker](http://www.mqtt-dashboard.com) of HiveMQ is to be used. Also, the [publishing interval](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino#L47) can be changed (default is `5000` milliseconds).
