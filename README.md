@@ -5,9 +5,9 @@
 The script reads temperature data from a [DS18B20](https://create.arduino.cc/projecthub/TheGadgetBoy/ds18b20-digital-temperature-sensor-and-arduino-9cc806) temperature module and publishes it with the [public MQTT broker](http://www.mqtt-dashboard.com) of HiveMQ. When subscribing to the corresponding topic, the published messages can be verified using the HiveMQ [websocket client](http://www.hivemq.com/demos/websocket-client/) for example. Of course, other brokers can be used as well.
 
 ## Prerequisites
-* [Arduino IDE](https://www.arduino.cc/en/Main/Software) (or the [Arduino CLI](https://playground.arduino.cc/Learning/CommandLine) and some text editor)
+* [Arduino IDE](https://www.arduino.cc/en/Main/Software) (or the [Arduino CLI](https://playground.arduino.cc/Learning/CommandLine) and a text editor)
 * Additional boards (ESP8266 and NodeMCU), as explained [here](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/)
-* Additional [libraries](#required-libraries) (supporting Wifi, MQTT, OneWire and the temperature sensor)
+* Additional [libraries](#required-libraries) (to support Wifi, MQTT, OneWire and the temperature sensor)
 * Possibly [Python](https://www.python.org/downloads/) and [Esptool](https://github.com/espressif/esptool) (for flashing the script)
 
 ## Getting Started
