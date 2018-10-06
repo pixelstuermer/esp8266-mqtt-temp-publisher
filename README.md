@@ -17,7 +17,7 @@ The script reads temperature data from a [DS18B20](https://create.arduino.cc/pro
 4. [Flash](#installing) the firmware to your ESP8266 or NodeMCU board
 
 ## Configuration
-The following variables need to be set to tailor the application to your needs. `mqttBroker` and `mqttPort` can remain unchanged if the [public broker](http://www.mqtt-dashboard.com) of HiveMQ is to be used. Also, the [publishing interval](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino#L47) can be changed (default is `5000` milliseconds).
+The following variables need to be set to tailor the application to your needs. `mqttBroker` and `mqttPort` can remain unchanged if the [public broker](http://www.mqtt-dashboard.com) of HiveMQ is to be used. Also, the [publishing interval](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino#L47) can be changed (default is `60000` milliseconds).
 
     wifiSsid = "{WIFI name}";
     wifiPassword = "{WIFI password}";

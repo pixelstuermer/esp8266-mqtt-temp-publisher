@@ -44,7 +44,7 @@ void loop() {
   char currentTempArray[6];
   dtostrf(currentTemp, 6, 2, currentTempArray);
   mqttClient.publish(mqttTopic, currentTempArray);
-  delay(5000);
+  delay(60000);
 }
 
 // Reading the actual temperature data
