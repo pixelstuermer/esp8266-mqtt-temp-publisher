@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 [![Build Status](https://travis-ci.org/pixelstuermer/esp8266-mqtt-temp-publisher.svg?branch=master)](https://travis-ci.org/pixelstuermer/esp8266-mqtt-temp-publisher)
 
-# ESP8266/NodeMCU script for measuring and publishing MQTT temperature data
+# ESP8266/NodeMCU Script for Measuring and Publishing MQTT Temperature Data
 The script reads temperature data from a [DS18B20](https://create.arduino.cc/projecthub/TheGadgetBoy/ds18b20-digital-temperature-sensor-and-arduino-9cc806) temperature module and publishes it with the [public MQTT broker](http://www.mqtt-dashboard.com) of HiveMQ. Of course, other brokers can be used as well. When subscribing to the corresponding topic, the published messages can be verified (using the HiveMQ [websocket client](http://www.hivemq.com/demos/websocket-client/) for example).
 
 ## Prerequisites
@@ -17,7 +17,7 @@ The script reads temperature data from a [DS18B20](https://create.arduino.cc/pro
 4. [Flash](#installing) the firmware to your ESP8266 or NodeMCU board
 
 ## Configuration
-The following variables need to be set to tailor the application to your needs. `mqttBroker` and `mqttPort` can remain unchanged if the [public broker](http://www.mqtt-dashboard.com) of HiveMQ is to be used. Also, the [publishing interval](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino#L47) can be changed (default is `60000` milliseconds).
+The following variables need to be set to tailor the application to your needs. `mqttBroker` and `mqttPort` can remain unchanged if the public broker of HiveMQ is to be used. Also, the [publishing interval](https://github.com/pixelstuermer/esp8266-mqtt-temp-publisher/blob/master/mqtt-temp-publisher.ino#L47) can be changed (default is `60000` milliseconds).
 
     wifiSsid = "{WIFI name}";
     wifiPassword = "{WIFI password}";
@@ -30,10 +30,19 @@ The following variables need to be set to tailor the application to your needs. 
     oneWire({data pin of your temperature sensor});  // default is D4
 
 ## Building
-Tbd.
+
+### Compiling and Flashing in one Step
+Using the Arduino IDE, the script can be compiled and uploaded in one step: Select a board (ESP8266 or NodeMCU) from within `Tools > Board` and choose the correct serial port for uploading from within `Tools > Serial Port`. Then click `Sketch > Upload` to compile the code and flash the firmware in one step.
+
+Using the Arduino CLI, the script can be compiled and uploaded using `{path to arduino cli}/arduino --upload --board {board information} --port {portname} {path to .ino file}/mqtt-temp-publisher.ino` as explained [here](https://github.com/arduino/Arduino/blob/master/build/shared/manpage.adoc) as well.
+
+### Only Compiling the Binary
+If you simply want to build the binary without flashing it, select `Sketch > Export compiled Binary` from within the Arduino IDE.
+
+Otherwise, the Arduino CLI can be utilized as well using `{path to arduino cli}/arduino --verify --board {board information} --preserve-temp-files --pref build.path={path to binary} {path to .ino file}/mqtt-temp-publisher.ino`.
 
 ## Installing
-Tbd.
+When having only compiled the binary (as explained [above](#compiling-and-flashing-in-one-step)), the firmware can be flashed using esptool for example: `python {path to esptool}/esptool.py --port {portname} write_flash -fm dio 0x00000 {path to binary}/{binary}.ino.bin`.
 
 ## Required Libraries
 * [ESP8266WiFi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)
