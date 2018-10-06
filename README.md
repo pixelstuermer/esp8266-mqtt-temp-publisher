@@ -35,7 +35,7 @@ The following variables need to be set to tailor the application to your needs. 
 ### Compiling and Flashing in one Step
 Using the Arduino IDE, the script can be compiled and uploaded in one step: Select a board (ESP8266 or NodeMCU) from within `Tools > Board` and choose the correct serial port for uploading from within `Tools > Serial Port`. Then click `Sketch > Upload` to compile the code and flash the firmware in one step.
 
-Using the Arduino CLI, the script can be compiled and uploaded using `{path to arduino cli}/arduino --upload --board {board information} --port {portname} {path to scripts }/mqtt-temp-publisher.ino` as explained [here](https://github.com/arduino/Arduino/blob/master/build/shared/manpage.adoc) as well.
+Using the Arduino CLI, the script can be compiled and uploaded using `{path to arduino cli}/arduino --upload --board {board information} --port {portname} {path to script}/mqtt-temp-publisher.ino` as explained [here](https://github.com/arduino/Arduino/blob/master/build/shared/manpage.adoc) as well.
 
 ### Only Compiling the Binary
 If you simply want to build the binary without flashing it, select `Sketch > Export compiled Binary` within the Arduino IDE.
